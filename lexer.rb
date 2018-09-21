@@ -4,7 +4,7 @@ class Lexer
   # First we define the special keywords of our language in a constant.
   # It will be used later on in the tokenizing process to disambiguate
   # an identifier (method name, local variable, etc.) from a keyword.
-  KEYWORDS = ["def", "class", "if", "true", "false", "nil"]
+  KEYWORDS = ["def", "class", "if", "true", "false", "nil", "while"]
   
   def tokenize(code)
     code.chomp! # Remove extra line breaks
