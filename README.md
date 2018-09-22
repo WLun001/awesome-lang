@@ -18,4 +18,4 @@ print(awesome.awesomeness)
 ```
 
 ### Language overview
-[overview process](docs/overview.png)
+![overview process](docs/overview.png)
