@@ -110,4 +110,19 @@ CODE
     
     assert_equal nodes, Parser.new.parse(code)
   end
+
+  def test_while
+    code = <<-CODE
+while true:
+  nil
+    CODE
+
+    nodes = Nodes.new([
+                          WhileNode.new(TrueNode.new,
+                                     Nodes.new([NilNode.new])
+                          )
+                      ])
+
+    assert_equal nodes, Parser.new.parse(code)
+  end
 end

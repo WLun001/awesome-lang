@@ -3,6 +3,7 @@ class Parser
 # We need to tell the parser what tokens to expect. So each type of token produced
 # by our lexer needs to be declared here.
 token IF
+token WHILE
 token DEF
 token CLASS
 token NEWLINE
@@ -83,6 +84,7 @@ rule
   | Def
   | Class
   | If
+  | While
   | '(' Expression ')'    { result = val[1] }
   ;
 
@@ -207,6 +209,10 @@ rule
   # Finally, `if` is similar to `class` but receives a *condition*.
   If:
     IF Expression Block           { result = IfNode.new(val[1], val[2]) }
+  ;
+
+  While:
+    WHILE Expression Block        { result = WhileNode.new(val[1], val[2]) }
   ;
 end
 
